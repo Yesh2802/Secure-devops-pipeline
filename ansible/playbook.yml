@@ -1,0 +1,18 @@
+---
+- name: Configure local environment
+  hosts: web
+  become: false
+  tasks:
+    - name: Ensure 'curl' is installed
+      package:
+        name: curl
+        state: present
+
+    - name: Create a dummy config file
+      copy:
+        content: "This is a DevSecOps test file"
+        dest: /tmp/devsecops_config.txt
+
+    - name: Print success message
+      debug:
+        msg: "Configuration completed successfully!"
