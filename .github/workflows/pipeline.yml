@@ -23,31 +23,31 @@ jobs:
         run: |
           pip install checkov flake8 yamllint flask
 
-      - name: 📘 Lint YAML files
+      - name: Lint YAML files
         run: yamllint .
 
-      - name: 🛡️ Check Terraform code with Checkov
+      - name: Check Terraform code with Checkov
         run: checkov -d terraform/
 
-      - name: 🐳 Install Trivy
+      - name: Install Trivy
         run: |
           sudo apt-get update
           sudo apt-get install -y wget
           wget https://github.com/aquasecurity/trivy/releases/latest/download/trivy_0.51.1_Linux-64bit.deb
           sudo dpkg -i trivy_0.51.1_Linux-64bit.deb
 
-      - name: 🐳 Build Docker image
+      - name: Build Docker image
         run: docker build -t devsecops-app docker/app/
 
-      - name: 🔎 Scan Docker image with Trivy
+      - name: Scan Docker image with Trivy
         run: trivy image devsecops-app
 
-      - name: 🔐 Scan for secrets with Gitleaks
+      - name: Scan for secrets with Gitleaks
         uses: gitleaks/gitleaks-action@v2
         with:
           args: detect --source . --verbose
 
-      - name: ✅ Run simple test
+      - name: Run simple test
         run: |
           pip install pytest
           pytest tests/
