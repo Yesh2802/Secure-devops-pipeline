@@ -21,7 +21,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install checkov flake8 yamllint flask
+          pip install -r Docker/app/requirements.txt
+          pip install checkov flake8 yamllint
 
       - name: Check Terraform code with Checkov
         run: checkov -d terraform/
@@ -34,7 +35,7 @@ jobs:
           sudo dpkg -i trivy_0.61.0_Linux-64bit.deb
 
       - name: Build Docker image
-        run: docker build -t devsecops-app docker/app/
+        run: docker build -t devsecops-app Docker/app/
 
       - name: Scan Docker image with Trivy
         run: trivy image devsecops-app
