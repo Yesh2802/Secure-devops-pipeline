@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r Docker/app/requirements.txt
-          pip install checkov flake8 yamllint
+          pip install checkov flake8 yamllint app
 
       - name: Check Terraform code with Checkov
         run: checkov -d terraform/
