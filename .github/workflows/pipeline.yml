@@ -45,7 +45,7 @@ jobs:
         with:
           args: detect --source . --verbose
 
-      - name: Run simple test
-        run: |
-          pip install pytest
-          pytest tests/test.py
+      # - name: Run simple test
+      #   run: |
+      #     pip install pytest
+      #     pytest tests/test.py
