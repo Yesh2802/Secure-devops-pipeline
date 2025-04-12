@@ -5,7 +5,6 @@ A fully automated DevSecOps pipeline for deploying a containerized Python web ap
 [![DevSecOps Pipeline](https://github.com/Yesh2802/Secure-devops-pipeline/actions/workflows/pipeline.yml/badge.svg)](https://github.com/Yesh2802/Secure-devops-pipeline/actions)
 [![Checkov](https://img.shields.io/badge/Checkov-Terraform%20Scanner-blue?logo=terraform)](https://www.checkov.io/)
 [![Trivy](https://img.shields.io/badge/Trivy-Docker%20Security%20Scanner-blue?logo=docker)](https://aquasecurity.github.io/trivy/)
-[![License](https://img.shields.io/github/license/Yesh2802/Secure-devops-pipeline)](LICENSE)
 
 ---
 
