@@ -21,7 +21,7 @@ jobs:
 
       - name: 📦 Install dependencies
         run: |
-          pip install -r docker/app/requirements.txt
+          pip install -r docker/requirements.txt
           pip install checkov flake8 yamllint
 
       - name: 🔍 Lint Python code
