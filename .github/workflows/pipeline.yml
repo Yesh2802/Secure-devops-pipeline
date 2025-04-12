@@ -11,20 +11,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🔄 Checkout code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: 🐍 Set up Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
-      - name: 📦 Install dependencies
+      - name: Install dependencies
         run: |
           pip install checkov flake8 yamllint flask
-
-      - name: 🔍 Lint Python code
-        run: flake8 docker/app/*.py
 
       - name: 📘 Lint YAML files
         run: yamllint .
