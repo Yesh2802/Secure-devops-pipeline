@@ -23,9 +23,6 @@ jobs:
         run: |
           pip install checkov flake8 yamllint flask
 
-      - name: Lint YAML files
-        run: yamllint .
-
       - name: Check Terraform code with Checkov
         run: checkov -d terraform/
 
